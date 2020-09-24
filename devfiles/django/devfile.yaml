@@ -1,0 +1,24 @@
+apiVersion: 1.0.0
+metadata:
+  generateName: django-
+projects:
+  -
+    name: django
+    source:
+      type: git
+      location: "https://https://github.com/ashen1dev/apaastest.git"
+components:
+  - type: dockerimage
+    alias: runtime
+    image: quay.io/eclipse/che-python-3.7
+    memoryLimit: 1024Mi
+    mountSources: true
+    endpoints:
+      - name: "django"
+        port: 3000
+commands:
+  - name: run
+    actions:
+      - type: exec
+        component: runtime
+        command: python manage.py runserver

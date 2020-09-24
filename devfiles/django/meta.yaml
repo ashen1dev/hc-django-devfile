@@ -1,0 +1,5 @@
+displayName: Python Django 
+description: Django framework
+tags: ["Python", "Django"]
+projectType: "django"
+language: "python"
